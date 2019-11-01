@@ -2,7 +2,7 @@
 
 ### 基础篇
 * [基本功](basic/basic-skill.md)
-* [集合](part1/gitbook.md)
+* [集合](basic/collection.md)
 * [线程](part1/gitbook.md)
 * [锁机制](part1/gitbook.md)
 

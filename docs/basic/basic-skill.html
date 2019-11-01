@@ -1,0 +1,611 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>基本功 · weylan java 面试总结</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Blankj">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../part1/gitbook.md" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    
+        <link rel="shortcut icon" href='../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../source/images/apple-touch-icon.jpg'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../source/images/apple-touch-icon.jpg">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../source/images/apple-touch-icon.jpg">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"weylan","repo":"java-interview","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.weypage.com" target="_blank" class="custom-link">个人主页</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        <li class="header">基础篇</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="basic-skill.html">
+            
+                <a href="basic-skill.html">
+            
+                    
+                    基本功
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../part1/gitbook.md">
+            
+                <span>
+            
+                    
+                    集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../part1/gitbook.md">
+            
+                <span>
+            
+                    
+                    线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../part1/gitbook.md">
+            
+                <span>
+            
+                    
+                    锁机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">核心篇</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../part1/writing.md">
+            
+                <span>
+            
+                    
+                    数据存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../part1/gitbook.md">
+            
+                <span>
+            
+                    
+                    缓存使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../part1/gitbook.md">
+            
+                <span>
+            
+                    
+                    消息队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">框架篇</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../part2/feedback_please.md">
+            
+                <span>
+            
+                    
+                    Spring]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../part2/better_tools.md">
+            
+                <span>
+            
+                    
+                    Netty
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../part2/feedback_please.md">
+            
+                <span>
+            
+                    
+                    微服务]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../part2/better_tools.md">
+            
+                <span>
+            
+                    
+                    分布式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">安全&性能</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../part2/feedback_please.md">
+            
+                <span>
+            
+                    
+                    安全问题]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../part2/better_tools.md">
+            
+                <span>
+            
+                    
+                    性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">工程篇</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../part2/feedback_please.md">
+            
+                <span>
+            
+                    
+                    需求分析]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../part2/better_tools.md">
+            
+                <span>
+            
+                    
+                    设计能力
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../part2/better_tools.md">
+            
+                <span>
+            
+                    
+                    设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../part2/better_tools.md">
+            
+                <span>
+            
+                    
+                    业务工程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../part2/feedback_please.md">
+            
+                <span>
+            
+                    
+                    软实力
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >基本功</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7279;&#x5F81;"><b></b>&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7279;&#x5F81;</a></li><li><span class="title-icon "></span><a href="#final-finally-finalize-&#x7684;&#x533A;&#x522B;"><b></b>final, finally, finalize &#x7684;&#x533A;&#x522B;</a></li></ul></div><a href="#&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7279;&#x5F81;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7279;&#x5F81;"><a name="&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7279;&#x5F81;" class="anchor-navigation-ex-anchor" href="#&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7279;&#x5F81;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7279;&#x5F81;" class="plugin-anchor" href="#&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7279;&#x5F81;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7279;&#x5F81;</h1>
+<p>&#x5C01;&#x88C5;&#xFF0C;&#x7EE7;&#x627F;&#xFF0C;&#x591A;&#x6001;&#x548C;&#x62BD;&#x8C61;</p>
+<ol>
+<li>&#x5C01;&#x88C5;
+&#x5C01;&#x88C5;&#x7ED9;&#x5BF9;&#x8C61;&#x63D0;&#x4F9B;&#x4E86;&#x9690;&#x85CF;&#x5185;&#x90E8;&#x7279;&#x6027;&#x548C;&#x884C;&#x4E3A;&#x7684;&#x80FD;&#x529B;&#x3002;&#x5BF9;&#x8C61;&#x63D0;&#x4F9B;&#x4E00;&#x4E9B;&#x80FD;&#x88AB;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x8BBF;&#x95EE;&#x7684;&#x65B9;&#x6CD5;
+&#x6765;&#x6539;
+&#x53D8;&#x5B83;&#x5185;&#x90E8;&#x7684;&#x6570;&#x636E;&#x3002;&#x5728; Java &#x5F53;&#x4E2D;&#xFF0C;&#x6709; 3 &#x79CD;&#x4FEE;&#x9970;&#x7B26;&#xFF1A; public&#xFF0C; private &#x548C; protected&#x3002;&#x6BCF;&#x4E00;
+&#x79CD;&#x4FEE;&#x9970;&#x7B26;
+&#x7ED9;&#x5176;&#x4ED6;&#x7684;&#x4F4D;&#x4E8E;&#x540C;&#x4E00;&#x4E2A;&#x5305;&#x6216;&#x8005;&#x4E0D;&#x540C;&#x5305;&#x4E0B;&#x9762;&#x5BF9;&#x8C61;&#x8D4B;&#x4E88;&#x4E86;&#x4E0D;&#x540C;&#x7684;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x3002;
+&#x4E0B;&#x9762;&#x5217;&#x51FA;&#x4E86;&#x4F7F;&#x7528;&#x5C01;&#x88C5;&#x7684;&#x4E00;&#x4E9B;&#x597D;&#x5904;&#xFF1A;
+&#x901A;&#x8FC7;&#x9690;&#x85CF;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x6765;&#x4FDD;&#x62A4;&#x5BF9;&#x8C61;&#x5185;&#x90E8;&#x7684;&#x72B6;&#x6001;&#x3002;
+&#x63D0;&#x9AD8;&#x4E86;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x7528;&#x6027;&#x548C;&#x53EF;&#x7EF4;&#x62A4;&#x6027;&#xFF0C;&#x56E0;&#x4E3A;&#x5BF9;&#x8C61;&#x7684;&#x884C;&#x4E3A;&#x53EF;&#x4EE5;&#x88AB;&#x5355;&#x72EC;&#x7684;&#x6539;&#x53D8;&#x6216;&#x8005;&#x662F;&#x6269;&#x5C55;&#x3002;
+&#x7981;&#x6B62;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x4E0D;&#x826F;&#x4EA4;&#x4E92;&#x63D0;&#x9AD8;&#x6A21;&#x5757;&#x5316;</li>
+<li>&#x7EE7;&#x627F;
+&#x7EE7;&#x627F;&#x7ED9;&#x5BF9;&#x8C61;&#x63D0;&#x4F9B;&#x4E86;&#x4ECE;&#x57FA;&#x7C7B;&#x83B7;&#x53D6;&#x5B57;&#x6BB5;&#x548C;&#x65B9;&#x6CD5;&#x7684;&#x80FD;&#x529B;&#x3002;&#x7EE7;&#x627F;&#x63D0;&#x4F9B;&#x4E86;&#x4EE3;&#x7801;&#x7684;&#x91CD;&#x7528;&#x884C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;
+&#x4E0D;&#x4FEE;&#x6539;&#x7C7B;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x7ED9;&#x73B0;&#x5B58;&#x7684;&#x7C7B;&#x6DFB;&#x52A0;&#x65B0;&#x7279;&#x6027;&#x3002;</li>
+<li>&#x591A;&#x6001;
+&#x591A;&#x6001;&#x662F;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x7ED9;&#x4E0D;&#x540C;&#x7684;&#x5E95;&#x5C42;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x505A;&#x76F8;&#x540C;&#x7684;&#x63A5;&#x53E3;&#x5C55;&#x793A;&#x7684;&#x4E00;&#x79CD;&#x80FD;&#x529B;&#x3002;&#x4E00;&#x4E2A;&#x591A;&#x6001;&#x7C7B;&#x578B;&#x4E0A;
+&#x7684;&#x64CD;&#x4F5C;&#x53EF;&#x4EE5;&#x5E94;&#x7528;&#x5230;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x7684;&#x503C;&#x4E0A;&#x9762;&#x3002;</li>
+<li>&#x62BD;&#x8C61;
+&#x62BD;&#x8C61;&#x662F;&#x628A;&#x60F3;&#x6CD5;&#x4ECE;&#x5177;&#x4F53;&#x7684;&#x5B9E;&#x4F8B;&#x4E2D;&#x5206;&#x79BB;&#x51FA;&#x6765;&#x7684;&#x6B65;&#x9AA4;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x8981;&#x6839;&#x636E;&#x4ED6;&#x4EEC;&#x7684;&#x529F;&#x80FD;&#x800C;&#x4E0D;&#x662F;&#x5B9E;&#x73B0;&#x7EC6;
+&#x8282;&#x6765;&#x521B;&#x5EFA;&#x7C7B;&#x3002; Java &#x652F;&#x6301;&#x521B;&#x5EFA;&#x53EA;&#x66B4;&#x6F0F;&#x63A5;&#x53E3;&#x800C;&#x4E0D;&#x5305;&#x542B;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x7684;&#x62BD;&#x8C61;&#x7684;&#x7C7B;&#x3002;&#x8FD9;&#x79CD;&#x62BD;&#x8C61;&#x6280;&#x672F;
+&#x7684;&#x4E3B;&#x8981;&#x76EE;&#x7684;&#x662F;&#x628A;&#x7C7B;&#x7684;&#x884C;&#x4E3A;&#x548C;&#x5B9E;&#x73B0;&#x7EC6;&#x8282;&#x5206;&#x79BB;&#x5F00;&#x3002;</li>
+</ol>
+<h1 id="final-finally-finalize-&#x7684;&#x533A;&#x522B;"><a name="final-finally-finalize-&#x7684;&#x533A;&#x522B;" class="anchor-navigation-ex-anchor" href="#final-finally-finalize-&#x7684;&#x533A;&#x522B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="final-finally-finalize-&#x7684;&#x533A;&#x522B;" class="plugin-anchor" href="#final-finally-finalize-&#x7684;&#x533A;&#x522B;"><i class="fa fa-link" aria-hidden="true"></i></a>final, finally, finalize &#x7684;&#x533A;&#x522B;</h1>
+<ol>
+<li>final
+&#x4FEE;&#x9970;&#x7B26;&#xFF08;&#x5173;&#x952E;&#x5B57;&#xFF09;&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x7C7B;&#x88AB;&#x58F0;&#x660E;&#x4E3A;final&#xFF0C;&#x610F;&#x5473;&#x7740;&#x5B83;&#x4E0D;&#x80FD;&#x518D;&#x6D3E;&#x751F;&#x51FA;&#x65B0;&#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x4E0D;&#x80FD;&#x4F5C;
+&#x4E3A;&#x7236;&#x7C7B;&#x88AB;&#x7EE7;&#x627F;&#x3002;&#x56E0;&#x6B64;&#x4E00;&#x4E2A;&#x7C7B;&#x4E0D;&#x80FD;&#x65E2;&#x88AB;&#x58F0;&#x660E;&#x4E3A; abstract&#x7684;&#xFF0C;&#x53C8;&#x88AB;&#x58F0;&#x660E;&#x4E3A;final&#x7684;&#x3002;&#x5C06;&#x53D8;&#x91CF;&#x6216;
+&#x65B9;&#x6CD5;&#x58F0;&#x660E;&#x4E3A;final&#xFF0C;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x5B83;&#x4EEC;&#x5728;&#x4F7F;&#x7528;&#x4E2D;&#x4E0D;&#x88AB;&#x6539;&#x53D8;&#x3002;&#x88AB;&#x58F0;&#x660E;&#x4E3A;final&#x7684;&#x53D8;&#x91CF;&#x5FC5;&#x987B;&#x5728;&#x58F0;&#x660E;&#x65F6;
+&#x7ED9;&#x5B9A;&#x521D;&#x503C;&#xFF0C;&#x800C;&#x5728;&#x4EE5;&#x540E;&#x7684;&#x5F15;&#x7528;&#x4E2D;&#x53EA;&#x80FD;&#x8BFB;&#x53D6;&#xFF0C;&#x4E0D;&#x53EF;&#x4FEE;&#x6539;&#x3002;&#x88AB;&#x58F0;&#x660E;&#x4E3A;final&#x7684;&#x65B9;&#x6CD5;&#x4E5F;&#x540C;&#x6837;&#x53EA;&#x80FD;&#x4F7F;
+&#x7528;&#xFF0C;&#x4E0D;&#x80FD;&#x91CD;&#x8F7D;&#x3002;</li>
+<li>finally
+&#x5728;&#x5F02;&#x5E38;&#x5904;&#x7406;&#x65F6;&#x63D0;&#x4F9B; finally &#x5757;&#x6765;&#x6267;&#x884C;&#x4EFB;&#x4F55;&#x6E05;&#x9664;&#x64CD;&#x4F5C;&#x3002;&#x5982;&#x679C;&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;&#xFF0C;&#x90A3;&#x4E48;&#x76F8;&#x5339;&#x914D;&#x7684;
+catch &#x5B50;&#x53E5;&#x5C31;&#x4F1A;&#x6267;&#x884C;&#xFF0C;&#x7136;&#x540E;&#x63A7;&#x5236;&#x5C31;&#x4F1A;&#x8FDB;&#x5165; finally &#x5757;&#xFF08;&#x5982;&#x679C;&#x6709;&#x7684;&#x8BDD;&#xFF09;&#x3002;</li>
+<li>finalize
+&#x65B9;&#x6CD5;&#x540D;&#x3002;Java &#x6280;&#x672F;&#x5141;&#x8BB8;&#x4F7F;&#x7528; finalize() &#x65B9;&#x6CD5;&#x5728;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x5C06;&#x5BF9;&#x8C61;&#x4ECE;&#x5185;&#x5B58;&#x4E2D;&#x6E05;&#x9664;&#x51FA;&#x53BB;&#x4E4B;&#x524D;
+&#x505A;&#x5FC5;&#x8981;&#x7684;&#x6E05;&#x7406;&#x5DE5;&#x4F5C;&#x3002;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x662F;&#x7531;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x5728;&#x786E;&#x5B9A;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x6CA1;&#x6709;&#x88AB;&#x5F15;&#x7528;&#x65F6;&#x5BF9;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;
+&#x8C03;&#x7528;&#x7684;&#x3002;&#x5B83;&#x662F;&#x5728; Object &#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x6240;&#x6709;&#x7684;&#x7C7B;&#x90FD;&#x7EE7;&#x627F;&#x4E86;&#x5B83;&#x3002;&#x5B50;&#x7C7B;&#x8986;&#x76D6; finalize() &#x65B9;
+&#x6CD5;&#x4EE5;&#x6574;&#x7406;&#x7CFB;&#x7EDF;&#x8D44;&#x6E90;&#x6216;&#x8005;&#x6267;&#x884C;&#x5176;&#x4ED6;&#x6E05;&#x7406;&#x5DE5;&#x4F5C;&#x3002;finalize() &#x65B9;&#x6CD5;&#x662F;&#x5728;&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;&#x5220;&#x9664;&#x5BF9;&#x8C61;&#x4E4B;&#x524D;
+&#x5BF9;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x8C03;&#x7528;&#x7684;&#x3002;</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../part1/gitbook.md" class="navigation navigation-next " aria-label="Next page: 集合">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"基本功","level":"1.2","depth":1,"next":{"title":"集合","level":"1.3","depth":1,"path":"part1/gitbook.md","ref":"part1/gitbook.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/weylanshi"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"./source/images/donate.jpg","alipayText":" ","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"weylan","repo":"java-interview","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Blankj","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"weylan java 面试总结","language":"zh-hans","links":{"sidebar":{"个人主页":"https://www.weypage.com"}},"gitbook":"3.2.3","description":"select * from learn"},"file":{"path":"basic/basic-skill.md","mtime":"2019-11-01T06:53:11.608Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-01T06:56:01.489Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

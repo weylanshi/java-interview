@@ -1,5 +1,5 @@
 {
-    "title": "Blankj's Glory",
+    "title": "weylan java 面试总结",
     "author": "Blankj",
     "description": "select * from learn",
     "language": "zh-hans",
@@ -12,7 +12,7 @@
     },
     "links": {
         "sidebar": {
-            "我的狗窝": "https://blankj.com"
+            "个人主页": "https://www.weypage.com"
         }
     },
     "plugins": [
@@ -30,12 +30,12 @@
     ],
     "pluginsConfig": {
         "github": {
-            "url": "https://github.com/Blankj"
+            "url": "https://github.com/weylanshi"
         },
         "github-buttons": {
             "buttons": [{
-                "user": "Blankj",
-                "repo": "glory",
+                "user": "weylan",
+                "repo": "java-interview",
                 "type": "star",
                 "size": "small",
                 "count": true
@@ -43,7 +43,7 @@
             ]
         },
         "donate": {
-            "alipay": "./source/images/donate.png",
+            "alipay": "./source/images/donate.jpg",
             "title": "",
             "button": "赞赏",
             "alipayText": " "
@@ -58,8 +58,8 @@
             "linkedin": false,
             "messenger": false,
             "pocket": false,
-            "qq": false,
-            "qzone": false,
+            "qq": true,
+            "qzone": true,
             "stumbleupon": false,
             "twitter": false,
             "viber": false,

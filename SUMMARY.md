@@ -13,21 +13,21 @@
 
 ### 框架篇
 
-* [Spring]](part2/feedback_please.md)
+* [Spring](part2/feedback_please.md)
 * [Netty](part2/better_tools.md)
 ### 微服务篇
 
-* [微服务]](part2/feedback_please.md)
+* [微服务](part2/feedback_please.md)
 * [分布式](part2/better_tools.md)
 
 ### 安全&性能
 
-* [安全问题]](part2/feedback_please.md)
+* [安全问题](part2/feedback_please.md)
 * [性能优化](part2/better_tools.md)
 
 ### 工程篇
 
-* [需求分析]](part2/feedback_please.md)
+* [需求分析](part2/feedback_please.md)
 * [设计能力](part2/better_tools.md)
 * [设计模式](part2/better_tools.md)
 * [业务工程](part2/better_tools.md)

@@ -1,0 +1,806 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Kafka · weylan java 面试总结</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Blankj">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="rabbit.html" />
+    
+    
+
+    
+        <link rel="shortcut icon" href='../../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../source/images/apple-touch-icon.jpg'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../source/images/apple-touch-icon.jpg">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../source/images/apple-touch-icon.jpg">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"weylan","repo":"java-interview","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.weypage.com" target="_blank" class="custom-link">个人主页</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        <li class="header">基础篇</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../basic/basic-skill.html">
+            
+                <a href="../../basic/basic-skill.html">
+            
+                    
+                    基本功
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../basic/collection.html">
+            
+                <a href="../../basic/collection.html">
+            
+                    
+                    集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../basic/thread.html">
+            
+                <a href="../../basic/thread.html">
+            
+                    
+                    线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../basic/lock.html">
+            
+                <a href="../../basic/lock.html">
+            
+                    
+                    锁机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../basic/jvm.html">
+            
+                <a href="../../basic/jvm.html">
+            
+                    
+                    JVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">核心篇</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../data-base.html">
+            
+                <a href="../data-base.html">
+            
+                    
+                    数据存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../cache.html">
+            
+                <a href="../cache.html">
+            
+                    
+                    缓存使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../msg-queue.html">
+            
+                <a href="../msg-queue.html">
+            
+                    
+                    消息队列
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="scene-introduction.html">
+            
+                <a href="scene-introduction.html">
+            
+                    
+                    消息队列使用场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" >
+            
+                <span>
+            
+                    
+                    如何选择消息队列?
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" >
+            
+                <span>
+            
+                    
+                    如何确保消息不回丢失?
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" >
+            
+                <span>
+            
+                    
+                    如何处理消费过程中的重复消费?
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="pile-up.html">
+            
+                <a href="pile-up.html">
+            
+                    
+                    消息积压了如何处理?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" >
+            
+                <span>
+            
+                    
+                    如何保证消息的有序性?
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" >
+            
+                <span>
+            
+                    
+                    自己如何实现消息队列?
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.3.8" data-path="kafka.html">
+            
+                <a href="kafka.html">
+            
+                    
+                    Kafka
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="rabbit.html">
+            
+                <a href="rabbit.html">
+            
+                    
+                    RabbitMQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">框架篇</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../framework/spring.html">
+            
+                <a href="../../framework/spring.html">
+            
+                    
+                    Spring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../framework/mybatis.html">
+            
+                <a href="../../framework/mybatis.html">
+            
+                    
+                    Mybatis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../framework/netty.html">
+            
+                <a href="../../framework/netty.html">
+            
+                    
+                    Netty
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">微服务篇</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../micro/feedback_please.md">
+            
+                <span>
+            
+                    
+                    微服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../micro/better_tools.md">
+            
+                <span>
+            
+                    
+                    分布式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">安全&性能</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../../safe/feedback_please.md">
+            
+                <span>
+            
+                    
+                    安全问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../../safe/better_tools.md">
+            
+                <span>
+            
+                    
+                    性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">工程篇</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../../engineering/feedback_please.md">
+            
+                <span>
+            
+                    
+                    需求分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../../engineering/better_tools.md">
+            
+                <span>
+            
+                    
+                    设计能力
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../../engineering/better_tools.md">
+            
+                <span>
+            
+                    
+                    设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../../engineering/better_tools.md">
+            
+                <span>
+            
+                    
+                    业务工程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../../soft-power/feedback_please.md">
+            
+                <span>
+            
+                    
+                    软实力
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Kafka</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#1-kafka-&#x6982;&#x8FF0;"><b></b>1. Kafka &#x6982;&#x8FF0;</a></li><li><span class="title-icon "></span><a href="#2-kafka&#x4E2D;&#x7684;&#x672F;&#x8BED;&#x89E3;&#x91CA;"><b></b>2. Kafka&#x4E2D;&#x7684;&#x672F;&#x8BED;&#x89E3;&#x91CA;</a></li><li><span class="title-icon "></span><a href="#3-&#x751F;&#x4EA7;&#x8005;"><b></b>3. &#x751F;&#x4EA7;&#x8005;</a></li><ul><li><span class="title-icon "></span><a href="#31-&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#xFF08;partition-&#x4F1A;&#x5747;&#x8861;&#x5206;&#x5E03;&#x5230;&#x4E0D;&#x540C;-broker-&#x4E0A;&#xFF09;"><b></b>3.1 &#x8D1F;&#x8F7D;&#x5747;&#x8861;&#xFF08;partition &#x4F1A;&#x5747;&#x8861;&#x5206;&#x5E03;&#x5230;&#x4E0D;&#x540C; broker &#x4E0A;&#xFF09;</a></li><li><span class="title-icon "></span><a href="#32-&#x6279;&#x91CF;&#x53D1;&#x9001;"><b></b>3.2 &#x6279;&#x91CF;&#x53D1;&#x9001;</a></li><li><span class="title-icon "></span><a href="#33-&#x538B;&#x7F29;&#xFF08;gzip-&#x6216;-snappy&#xFF09;"><b></b>3.3 &#x538B;&#x7F29;&#xFF08;GZIP &#x6216; Snappy&#xFF09;</a></li></ul><li><span class="title-icon "></span><a href="#4-&#x6D88;&#x8D39;&#x8005;"><b></b>4. &#x6D88;&#x8D39;&#x8005;</a></li><ul><li><span class="title-icon "></span><a href="#41-consumer-group"><b></b>4.1 Consumer Group</a></li><li><span class="title-icon "></span><a href="#42-push-vs-pull"><b></b>4.2 Push vs. Pull</a></li></ul></ul></div><a href="#1-kafka-&#x6982;&#x8FF0;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="1-kafka-&#x6982;&#x8FF0;"><a name="1-kafka-&#x6982;&#x8FF0;" class="anchor-navigation-ex-anchor" href="#1-kafka-&#x6982;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="1-kafka-&#x6982;&#x8FF0;" class="plugin-anchor" href="#1-kafka-&#x6982;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a>1. Kafka &#x6982;&#x8FF0;</h1>
+<p>  Kafka &#x662F;&#x4E00;&#x79CD;&#x9AD8;&#x541E;&#x5410;&#x91CF;&#x3001;&#x5206;&#x5E03;&#x5F0F;&#x3001;&#x57FA;&#x4E8E;&#x53D1;&#x5E03;/&#x8BA2;&#x9605;&#x7684;&#x6D88;&#x606F;&#x7CFB;&#x7EDF;&#xFF0C;&#x6700;&#x521D;&#x7531; LinkedIn &#x516C;&#x53F8;&#x5F00;&#x53D1;&#xFF0C;&#x4F7F;&#x7528;Scala &#x8BED;&#x8A00;&#x7F16;&#x5199;&#xFF0C;&#x76EE;&#x524D;&#x662F; Apache &#x7684;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#x3002;
+  &#x4E3B;&#x8981;&#x5E94;&#x7528;&#x573A;&#x666F;&#x662F;&#xFF1A;&#x65E5;&#x5FD7;&#x6536;&#x96C6;&#x7CFB;&#x7EDF;&#x548C;&#x6D88;&#x606F;&#x7CFB;&#x7EDF;&#x3002;
+  Kafka&#x4E3B;&#x8981;&#x8BBE;&#x8BA1;&#x76EE;&#x6807;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>&#x4EE5;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(1)&#x7684;&#x65B9;&#x5F0F;&#x63D0;&#x4F9B;&#x6D88;&#x606F;&#x6301;&#x4E45;&#x5316;&#x80FD;&#x529B;&#xFF0C;&#x5373;&#x4F7F;&#x5BF9;TB&#x7EA7;&#x4EE5;&#x4E0A;&#x6570;&#x636E;&#x4E5F;&#x80FD;&#x4FDD;&#x8BC1;&#x5E38;&#x6570;&#x65F6;&#x95F4;&#x7684;&#x8BBF;&#x95EE;&#x6027;&#x80FD;&#x3002;</li>
+<li>&#x9AD8;&#x541E;&#x5410;&#x7387;&#x3002;&#x5373;&#x4F7F;&#x5728;&#x975E;&#x5E38;&#x5EC9;&#x4EF7;&#x7684;&#x5546;&#x7528;&#x673A;&#x5668;&#x4E0A;&#x4E5F;&#x80FD;&#x505A;&#x5230;&#x5355;&#x673A;&#x652F;&#x6301;&#x6BCF;&#x79D2;100K&#x6761;&#x6D88;&#x606F;&#x7684;&#x4F20;&#x8F93;&#x3002;</li>
+<li>&#x652F;&#x6301;Kafka Server&#x95F4;&#x7684;&#x6D88;&#x606F;&#x5206;&#x533A;&#xFF0C;&#x53CA;&#x5206;&#x5E03;&#x5F0F;&#x6D88;&#x8D39;&#xFF0C;&#x540C;&#x65F6;&#x4FDD;&#x8BC1;&#x6BCF;&#x4E2A;partition&#x5185;&#x7684;&#x6D88;&#x606F;&#x987A;&#x5E8F;&#x4F20;&#x8F93;&#x3002;</li>
+<li>&#x540C;&#x65F6;&#x652F;&#x6301;&#x79BB;&#x7EBF;&#x6570;&#x636E;&#x5904;&#x7406;&#x548C;&#x5B9E;&#x65F6;&#x6570;&#x636E;&#x5904;&#x7406;&#x3002;</li>
+<li>&#x652F;&#x6301;&#x5728;&#x7EBF;&#x6C34;&#x5E73;&#x6269;&#x5C55;</li>
+</ul>
+<h1 id="2-kafka&#x4E2D;&#x7684;&#x672F;&#x8BED;&#x89E3;&#x91CA;"><a name="2-kafka&#x4E2D;&#x7684;&#x672F;&#x8BED;&#x89E3;&#x91CA;" class="anchor-navigation-ex-anchor" href="#2-kafka&#x4E2D;&#x7684;&#x672F;&#x8BED;&#x89E3;&#x91CA;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="2-kafka&#x4E2D;&#x7684;&#x672F;&#x8BED;&#x89E3;&#x91CA;" class="plugin-anchor" href="#2-kafka&#x4E2D;&#x7684;&#x672F;&#x8BED;&#x89E3;&#x91CA;"><i class="fa fa-link" aria-hidden="true"></i></a>2. Kafka&#x4E2D;&#x7684;&#x672F;&#x8BED;&#x89E3;&#x91CA;</h1>
+<p>  &#x5728;&#x6DF1;&#x5165;&#x7406;&#x89E3;Kafka&#x4E4B;&#x524D;&#xFF0C;&#x5148;&#x4ECB;&#x7ECD;&#x4E00;&#x4E0B;Kafka&#x4E2D;&#x7684;&#x672F;&#x8BED;&#x3002;&#x4E0B;&#x56FE;&#x5C55;&#x793A;&#x4E86;Kafka&#x7684;&#x76F8;&#x5173;&#x672F;&#x8BED;&#x4EE5;&#x53CA;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF1A;</p>
+<p>  <img src="kafka/images/image-20191102192619831.png" alt="image-20191102192619831" style="zoom:50%;"></p>
+<p>&#x4E0A;&#x56FE;&#x4E2D;&#x4E00;&#x4E2A;topic&#x914D;&#x7F6E;&#x4E86;3&#x4E2A;partition&#x3002;Partition1&#x6709;&#x4E24;&#x4E2A;offset&#xFF1A;0&#x548C;1&#x3002;Partition2&#x6709;4&#x4E2A;offset&#x3002;Partition3&#x6709;1&#x4E2A;offset&#x3002;&#x526F;&#x672C;&#x7684;id&#x548C;&#x526F;&#x672C;&#x6240;&#x5728;&#x7684;&#x673A;&#x5668;&#x7684;id&#x6070;&#x597D;&#x76F8;&#x540C;&#x3002;
+&#x5982;&#x679C;&#x4E00;&#x4E2A;topic&#x7684;&#x526F;&#x672C;&#x6570;&#x4E3A;3&#xFF0C;&#x90A3;&#x4E48;Kafka&#x5C06;&#x5728;&#x96C6;&#x7FA4;&#x4E2D;&#x4E3A;&#x6BCF;&#x4E2A;partition&#x521B;&#x5EFA;3&#x4E2A;&#x76F8;&#x540C;&#x7684;&#x526F;&#x672C;&#x3002;&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;broker&#x5B58;&#x50A8;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;partition&#x3002;&#x591A;&#x4E2A;producer&#x548C;consumer&#x53EF;&#x540C;&#x65F6;&#x751F;&#x4EA7;&#x548C;&#x6D88;&#x8D39;&#x6570;&#x636E;&#x3002;</p>
+<ol>
+<li><p><strong>broker</strong>&#xFF1A;
+Kafka &#x96C6;&#x7FA4;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x8282;&#x70B9;&#x79F0;&#x4E3A;broker&#xFF0C;&#x8D1F;&#x8D23;&#x6D88;&#x606F;&#x5B58;&#x50A8;&#x548C;&#x8F6C;&#x53D1;
+broker&#x5B58;&#x50A8;topic&#x7684;&#x6570;&#x636E;&#x3002;&#x5982;&#x679C;&#x67D0;topic&#x6709;N&#x4E2A;partition&#xFF0C;&#x96C6;&#x7FA4;&#x6709;N&#x4E2A;broker&#xFF0C;&#x90A3;&#x4E48;&#x6BCF;&#x4E2A;broker&#x5B58;&#x50A8;&#x8BE5;topic&#x7684;&#x4E00;&#x4E2A;partition&#x3002;
+&#x5982;&#x679C;&#x67D0;topic&#x6709;N&#x4E2A;partition&#xFF0C;&#x96C6;&#x7FA4;&#x6709;(N+M)&#x4E2A;broker&#xFF0C;&#x90A3;&#x4E48;&#x5176;&#x4E2D;&#x6709;N&#x4E2A;broker&#x5B58;&#x50A8;&#x8BE5;topic&#x7684;&#x4E00;&#x4E2A;partition&#xFF0C;&#x5269;&#x4E0B;&#x7684;M&#x4E2A;broker&#x4E0D;&#x5B58;&#x50A8;&#x8BE5;topic&#x7684;partition&#x6570;&#x636E;&#x3002;
+&#x5982;&#x679C;&#x67D0;topic&#x6709;N&#x4E2A;partition&#xFF0C;&#x96C6;&#x7FA4;&#x4E2D;broker&#x6570;&#x76EE;&#x5C11;&#x4E8E;N&#x4E2A;&#xFF0C;&#x90A3;&#x4E48;&#x4E00;&#x4E2A;broker&#x5B58;&#x50A8;&#x8BE5;topic&#x7684;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;partition&#x3002;&#x5728;&#x5B9E;&#x9645;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x7684;&#x53D1;&#x751F;&#xFF0C;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x5BB9;&#x6613;&#x5BFC;&#x81F4;Kafka&#x96C6;&#x7FA4;&#x6570;&#x636E;&#x4E0D;&#x5747;&#x8861;&#x3002;</p>
+</li>
+<li><p><strong>topic</strong>&#xFF1A;
+&#x6BCF;&#x6761;&#x53D1;&#x5E03;&#x5230;Kafka&#x96C6;&#x7FA4;&#x7684;&#x6D88;&#x606F;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x7C7B;&#x522B;&#xFF0C;&#x8FD9;&#x4E2A;&#x7C7B;&#x522B;&#x88AB;&#x79F0;&#x4E3A;Topic&#x3002;&#xFF08;&#x7269;&#x7406;&#x4E0A;&#x4E0D;&#x540C;Topic&#x7684;&#x6D88;&#x606F;&#x5206;&#x5F00;&#x5B58;&#x50A8;&#xFF0C;&#x903B;&#x8F91;&#x4E0A;&#x4E00;&#x4E2A;Topic&#x7684;&#x6D88;&#x606F;&#x867D;&#x7136;&#x4FDD;&#x5B58;&#x4E8E;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;broker&#x4E0A;&#x4F46;&#x7528;&#x6237;&#x53EA;&#x9700;&#x6307;&#x5B9A;&#x6D88;&#x606F;&#x7684;Topic&#x5373;&#x53EF;&#x751F;&#x4EA7;&#x6216;&#x6D88;&#x8D39;&#x6570;&#x636E;&#x800C;&#x4E0D;&#x5FC5;&#x5173;&#x5FC3;&#x6570;&#x636E;&#x5B58;&#x4E8E;&#x4F55;&#x5904;&#xFF09;
+&#x7C7B;&#x4F3C;&#x4E8E;&#x6570;&#x636E;&#x5E93;&#x7684;&#x8868;&#x540D;</p>
+</li>
+<li><p><strong>partition</strong>&#xFF1A;
+topic&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5206;&#x5272;&#x4E3A;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;partition&#x3002;&#x6BCF;&#x4E2A;topic&#x81F3;&#x5C11;&#x6709;&#x4E00;&#x4E2A;partition&#x3002;&#x6BCF;&#x4E2A;Partition&#x5728;&#x7269;&#x7406;&#x4E0A;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x8BE5;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x5B58;&#x50A8;&#x8FD9;&#x4E2A;Partition&#x7684;&#x6240;&#x6709;&#x6D88;&#x606F;&#x548C;&#x7D22;&#x5F15;&#x6587;&#x4EF6;&#x3002;&#x6BCF;&#x4E2A;partition&#x4E2D;&#x7684;&#x6570;&#x636E;&#x4F7F;&#x7528;&#x591A;&#x4E2A;segment&#x6587;&#x4EF6;&#x5B58;&#x50A8;&#x3002;partition&#x4E2D;&#x7684;&#x6570;&#x636E;&#x662F;&#x6709;&#x5E8F;&#x7684;&#xFF0C;&#x4E0D;&#x540C;partition&#x95F4;&#x7684;&#x6570;&#x636E;&#x4E22;&#x5931;&#x4E86;&#x6570;&#x636E;&#x7684;&#x987A;&#x5E8F;&#x3002;&#x5982;&#x679C;topic&#x6709;&#x591A;&#x4E2A;partition&#xFF0C;&#x6D88;&#x8D39;&#x6570;&#x636E;&#x65F6;&#x5C31;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x7684;&#x987A;&#x5E8F;&#x3002;&#x5728;&#x9700;&#x8981;&#x4E25;&#x683C;&#x4FDD;&#x8BC1;&#x6D88;&#x606F;&#x7684;&#x6D88;&#x8D39;&#x987A;&#x5E8F;&#x7684;&#x573A;&#x666F;&#x4E0B;&#xFF0C;&#x9700;&#x8981;&#x5C06;partition&#x6570;&#x76EE;&#x8BBE;&#x4E3A;1&#x3002;</p>
+<p><img src="kafka/images/image-20191102200403146.png" alt="image-20191102200403146" style="zoom:50%;"></p>
+</li>
+<li><p><strong>offset</strong>&#xFF1A;</p>
+<p>kafka&#x7684;&#x5B58;&#x50A8;&#x6587;&#x4EF6;&#x90FD;&#x662F;&#x6309;&#x7167;offset.kafka&#x6765;&#x547D;&#x540D;&#xFF0C;&#x7528;offset&#x505A;&#x540D;&#x5B57;&#x7684;&#x597D;&#x5904;&#x662F;&#x65B9;&#x4FBF;&#x67E5;&#x627E;&#x3002;&#x4F8B;&#x5982;&#x4F60;&#x60F3;&#x627E;&#x4F4D;&#x4E8E;2049&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x53EA;&#x8981;&#x627E;&#x5230;2048.kafka&#x7684;&#x6587;&#x4EF6;&#x5373;&#x53EF;&#x3002;&#x5F53;&#x7136;the first offset&#x5C31;&#x662F;00000000000.kafka</p>
+</li>
+<li><p><strong>Producer</strong>&#xFF1A;
+&#x751F;&#x4EA7;&#x8005;&#x5373;&#x6570;&#x636E;&#x7684;&#x53D1;&#x5E03;&#x8005;&#xFF0C;&#x8BE5;&#x89D2;&#x8272;&#x5C06;&#x6D88;&#x606F;&#x53D1;&#x5E03;&#x5230;Kafka&#x7684;topic&#x4E2D;&#x3002;broker&#x63A5;&#x6536;&#x5230;&#x751F;&#x4EA7;&#x8005;&#x53D1;&#x9001;&#x7684;&#x6D88;&#x606F;&#x540E;&#xFF0C;broker&#x5C06;&#x8BE5;&#x6D88;&#x606F;<strong>&#x8FFD;&#x52A0;</strong>&#x5230;&#x5F53;&#x524D;&#x7528;&#x4E8E;&#x8FFD;&#x52A0;&#x6570;&#x636E;&#x7684;segment&#x6587;&#x4EF6;&#x4E2D;&#x3002;&#x751F;&#x4EA7;&#x8005;&#x53D1;&#x9001;&#x7684;&#x6D88;&#x606F;&#xFF0C;&#x5B58;&#x50A8;&#x5230;&#x4E00;&#x4E2A;partition&#x4E2D;&#xFF0C;&#x751F;&#x4EA7;&#x8005;&#x4E5F;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x7684;partition&#x3002;</p>
+</li>
+<li><p><strong>Consumer</strong>&#xFF1A;</p>
+<p>&#x6D88;&#x8D39;&#x8005;&#x53EF;&#x4EE5;&#x4ECE;broker&#x4E2D;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x3002;&#x6D88;&#x8D39;&#x8005;&#x53EF;&#x4EE5;&#x6D88;&#x8D39;&#x591A;&#x4E2A;topic&#x4E2D;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+</li>
+<li><p><strong>Consumer Group</strong>&#xFF1A;</p>
+<p>&#x6BCF;&#x4E2A;Consumer&#x5C5E;&#x4E8E;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x7684;Consumer Group&#xFF08;&#x53EF;&#x4E3A;&#x6BCF;&#x4E2A;Consumer&#x6307;&#x5B9A;group name&#xFF0C;&#x82E5;&#x4E0D;&#x6307;&#x5B9A;group name&#x5219;&#x5C5E;&#x4E8E;&#x9ED8;&#x8BA4;&#x7684;group&#xFF09;&#x3002;&#x8FD9;&#x662F;kafka&#x7528;&#x6765;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;topic&#x6D88;&#x606F;&#x7684;&#x5E7F;&#x64AD;&#xFF08;&#x53D1;&#x7ED9;&#x6240;&#x6709;&#x7684;consumer&#xFF09;&#x548C;&#x5355;&#x64AD;&#xFF08;&#x53D1;&#x7ED9;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;consumer&#xFF09;&#x7684;&#x624B;&#x6BB5;&#x3002;&#x4E00;&#x4E2A;topic&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;CG&#x3002;topic&#x7684;&#x6D88;&#x606F;&#x4F1A;&#x590D;&#x5236;&#x7ED9;consumer&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x5E7F;&#x64AD;&#xFF0C;&#x53EA;&#x8981;&#x6BCF;&#x4E2A;consumer&#x6709;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;CG&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;&#x8981;&#x5B9E;&#x73B0;&#x5355;&#x64AD;&#x53EA;&#x8981;&#x6240;&#x6709;&#x7684;consumer&#x5728;&#x540C;&#x4E00;&#x4E2A;CG&#x3002;&#x7528;CG&#x8FD8;&#x53EF;&#x4EE5;&#x5C06;consumer&#x8FDB;&#x884C;&#x81EA;&#x7531;&#x7684;&#x5206;&#x7EC4;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x591A;&#x6B21;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x5230;&#x4E0D;&#x540C;&#x7684;topic&#x3002;</p>
+<p><img src="kafka/images/image-20191102202654996.png" alt="image-20191102202654996" style="zoom:50%;"></p>
+</li>
+<li><p><strong>Zookeeper</strong>&#xFF1A;</p>
+<p>&#x4FDD;&#x5B58;&#x7740;&#x96C6;&#x7FA4; broker&#x3001;topic&#x3001;partition &#x7B49; meta &#x6570;&#x636E;&#xFF1B;&#x53E6;&#x5916;&#xFF0C;&#x8FD8;&#x8D1F;&#x8D23; broker &#x6545;&#x969C;&#x53D1;&#x73B0;&#xFF0C;partition leader &#x9009;&#x4E3E;&#xFF0C;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x7B49;&#x529F;&#x80FD;</p>
+</li>
+<li><h4 id="leader"><a name="leader" class="anchor-navigation-ex-anchor" href="#leader"><i class="fa fa-link" aria-hidden="true"></i></a><a name="leader" class="plugin-anchor" href="#leader"><i class="fa fa-link" aria-hidden="true"></i></a>Leader</h4>
+<p>&#x6BCF;&#x4E2A;partition&#x6709;&#x591A;&#x4E2A;&#x526F;&#x672C;&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x4E14;&#x4EC5;&#x6709;&#x4E00;&#x4E2A;&#x4F5C;&#x4E3A;Leader&#xFF0C;Leader&#x662F;&#x5F53;&#x524D;&#x8D1F;&#x8D23;&#x6570;&#x636E;&#x7684;&#x8BFB;&#x5199;&#x7684;partition&#x3002;</p>
+</li>
+<li><h4 id="follower"><a name="follower" class="anchor-navigation-ex-anchor" href="#follower"><i class="fa fa-link" aria-hidden="true"></i></a><a name="follower" class="plugin-anchor" href="#follower"><i class="fa fa-link" aria-hidden="true"></i></a>Follower</h4>
+<p>Follower&#x8DDF;&#x968F;Leader&#xFF0C;&#x6240;&#x6709;&#x5199;&#x8BF7;&#x6C42;&#x90FD;&#x901A;&#x8FC7;Leader&#x8DEF;&#x7531;&#xFF0C;&#x6570;&#x636E;&#x53D8;&#x66F4;&#x4F1A;&#x5E7F;&#x64AD;&#x7ED9;&#x6240;&#x6709;Follower&#xFF0C;Follower&#x4E0E;Leader&#x4FDD;&#x6301;&#x6570;&#x636E;&#x540C;&#x6B65;&#x3002;&#x5982;&#x679C;Leader&#x5931;&#x6548;&#xFF0C;&#x5219;&#x4ECE;Follower&#x4E2D;&#x9009;&#x4E3E;&#x51FA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;Leader&#x3002;&#x5F53;Follower&#x4E0E;Leader&#x6302;&#x6389;&#x3001;&#x5361;&#x4F4F;&#x6216;&#x8005;&#x540C;&#x6B65;&#x592A;&#x6162;&#xFF0C;leader&#x4F1A;&#x628A;&#x8FD9;&#x4E2A;follower&#x4ECE;&#x201C;in sync replicas&#x201D;&#xFF08;ISR&#xFF09;&#x5217;&#x8868;&#x4E2D;&#x5220;&#x9664;&#xFF0C;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Follower&#x3002;</p>
+</li>
+</ol>
+<p>  <strong>kafka&#x67B6;&#x6784;:</strong></p>
+<p>  <img src="kafka/images/image-20191102185834934.png" alt="image-20191102185834934" style="zoom:50%;"></p>
+<p>  &#x5982;&#x4E0A;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x4E00;&#x4E2A;&#x5178;&#x578B;&#x7684;Kafka&#x96C6;&#x7FA4;&#x4E2D;&#x5305;&#x542B;&#x82E5;&#x5E72;Producer&#xFF08;&#x53EF;&#x4EE5;&#x662F;web&#x524D;&#x7AEF;&#x4EA7;&#x751F;&#x7684;Page View&#xFF0C;&#x6216;&#x8005;&#x662F;&#x670D;&#x52A1;&#x5668;&#x65E5;&#x5FD7;&#xFF0C;&#x7CFB;&#x7EDF;CPU&#x3001;Memory&#x7B49;&#xFF09;&#xFF0C;&#x82E5;&#x5E72;broker&#xFF08;Kafka&#x652F;&#x6301;&#x6C34;&#x5E73;&#x6269;&#x5C55;&#xFF0C;&#x4E00;&#x822C;broker&#x6570;&#x91CF;&#x8D8A;&#x591A;&#xFF0C;&#x96C6;&#x7FA4;&#x541E;&#x5410;&#x7387;&#x8D8A;&#x9AD8;&#xFF09;&#xFF0C;&#x82E5;&#x5E72;Consumer Group&#xFF0C;&#x4EE5;&#x53CA;&#x4E00;&#x4E2A;Zookeeper&#x96C6;&#x7FA4;&#x3002;Kafka&#x901A;&#x8FC7;Zookeeper&#x7BA1;&#x7406;&#x96C6;&#x7FA4;&#x914D;&#x7F6E;&#xFF0C;&#x9009;&#x4E3E;leader&#xFF0C;&#x4EE5;&#x53CA;&#x5728;Consumer Group&#x53D1;&#x751F;&#x53D8;&#x5316;&#x65F6;&#x8FDB;&#x884C;rebalance&#x3002;Producer&#x4F7F;&#x7528;push&#x6A21;&#x5F0F;&#x5C06;&#x6D88;&#x606F;&#x53D1;&#x5E03;&#x5230;broker&#xFF0C;Consumer&#x4F7F;&#x7528;pull&#x6A21;&#x5F0F;&#x4ECE;broker&#x8BA2;&#x9605;&#x5E76;&#x6D88;&#x8D39;&#x6D88;&#x606F;&#x3002;</p>
+<h1 id="3-&#x751F;&#x4EA7;&#x8005;"><a name="3-&#x751F;&#x4EA7;&#x8005;" class="anchor-navigation-ex-anchor" href="#3-&#x751F;&#x4EA7;&#x8005;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="3-&#x751F;&#x4EA7;&#x8005;" class="plugin-anchor" href="#3-&#x751F;&#x4EA7;&#x8005;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x751F;&#x4EA7;&#x8005;</h1>
+<h2 id="31-&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#xFF08;partition-&#x4F1A;&#x5747;&#x8861;&#x5206;&#x5E03;&#x5230;&#x4E0D;&#x540C;-broker-&#x4E0A;&#xFF09;"><a name="31-&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#xFF08;partition-&#x4F1A;&#x5747;&#x8861;&#x5206;&#x5E03;&#x5230;&#x4E0D;&#x540C;-broker-&#x4E0A;&#xFF09;" class="anchor-navigation-ex-anchor" href="#31-&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#xFF08;partition-&#x4F1A;&#x5747;&#x8861;&#x5206;&#x5E03;&#x5230;&#x4E0D;&#x540C;-broker-&#x4E0A;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="31-&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#xFF08;partition-&#x4F1A;&#x5747;&#x8861;&#x5206;&#x5E03;&#x5230;&#x4E0D;&#x540C;-broker-&#x4E0A;&#xFF09;" class="plugin-anchor" href="#31-&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#xFF08;partition-&#x4F1A;&#x5747;&#x8861;&#x5206;&#x5E03;&#x5230;&#x4E0D;&#x540C;-broker-&#x4E0A;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>3.1 &#x8D1F;&#x8F7D;&#x5747;&#x8861;&#xFF08;partition &#x4F1A;&#x5747;&#x8861;&#x5206;&#x5E03;&#x5230;&#x4E0D;&#x540C; broker &#x4E0A;&#xFF09;</h2>
+<p>&#x7531;&#x4E8E;&#x6D88;&#x606F; topic &#x7531;&#x591A;&#x4E2A; partition &#x7EC4;&#x6210;&#xFF0C;&#x4E14; partition &#x4F1A;&#x5747;&#x8861;&#x5206;&#x5E03;&#x5230;&#x4E0D;&#x540C; broker &#x4E0A;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x4E3A;&#x4E86;&#x6709;
+&#x6548;&#x5229;&#x7528; broker &#x96C6;&#x7FA4;&#x7684;&#x6027;&#x80FD;&#xFF0C;&#x63D0;&#x9AD8;&#x6D88;&#x606F;&#x7684;&#x541E;&#x5410;&#x91CF;&#xFF0C;producer &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x968F;&#x673A;&#x6216;&#x8005; hash &#x7B49;&#x65B9;&#x5F0F;&#xFF0C;&#x5C06;&#x6D88;
+&#x606F;&#x5E73;&#x5747;&#x53D1;&#x9001;&#x5230;&#x591A;&#x4E2A; partition &#x4E0A;&#xFF0C;&#x4EE5;&#x5B9E;&#x73B0;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x3002;</p>
+<p><img src="kafka/images/image-20191102191315356.png" alt="image-20191102191315356" style="zoom:50%;"></p>
+<h2 id="32-&#x6279;&#x91CF;&#x53D1;&#x9001;"><a name="32-&#x6279;&#x91CF;&#x53D1;&#x9001;" class="anchor-navigation-ex-anchor" href="#32-&#x6279;&#x91CF;&#x53D1;&#x9001;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="32-&#x6279;&#x91CF;&#x53D1;&#x9001;" class="plugin-anchor" href="#32-&#x6279;&#x91CF;&#x53D1;&#x9001;"><i class="fa fa-link" aria-hidden="true"></i></a>3.2 &#x6279;&#x91CF;&#x53D1;&#x9001;</h2>
+<p>&#x662F;&#x63D0;&#x9AD8;&#x6D88;&#x606F;&#x541E;&#x5410;&#x91CF;&#x91CD;&#x8981;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;Producer &#x7AEF;&#x53EF;&#x4EE5;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x5408;&#x5E76;&#x591A;&#x6761;&#x6D88;&#x606F;&#x540E;&#xFF0C;&#x4EE5;&#x4E00;&#x6B21;&#x8BF7;&#x6C42;&#x7684;&#x65B9;&#x5F0F;&#x53D1;
+&#x9001;&#x4E86;&#x6279;&#x91CF;&#x7684;&#x6D88;&#x606F;&#x7ED9; broker&#xFF0C;&#x4ECE;&#x800C;&#x5927;&#x5927;&#x51CF;&#x5C11; broker &#x5B58;&#x50A8;&#x6D88;&#x606F;&#x7684; IO &#x64CD;&#x4F5C;&#x6B21;&#x6570;&#x3002;&#x4F46;&#x4E5F;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x4E0A;&#x5F71;&#x54CD;
+&#x4E86;&#x6D88;&#x606F;&#x7684;&#x5B9E;&#x65F6;&#x6027;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x4EE5;&#x65F6;&#x5EF6;&#x4EE3;&#x4EF7;&#xFF0C;&#x6362;&#x53D6;&#x66F4;&#x597D;&#x7684;&#x541E;&#x5410;&#x91CF;&#x3002;</p>
+<h2 id="33-&#x538B;&#x7F29;&#xFF08;gzip-&#x6216;-snappy&#xFF09;"><a name="33-&#x538B;&#x7F29;&#xFF08;gzip-&#x6216;-snappy&#xFF09;" class="anchor-navigation-ex-anchor" href="#33-&#x538B;&#x7F29;&#xFF08;gzip-&#x6216;-snappy&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="33-&#x538B;&#x7F29;&#xFF08;gzip-&#x6216;-snappy&#xFF09;" class="plugin-anchor" href="#33-&#x538B;&#x7F29;&#xFF08;gzip-&#x6216;-snappy&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>3.3 &#x538B;&#x7F29;&#xFF08;GZIP &#x6216; Snappy&#xFF09;</h2>
+<p>Producer &#x7AEF;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; GZIP &#x6216; Snappy &#x683C;&#x5F0F;&#x5BF9;&#x6D88;&#x606F;&#x96C6;&#x5408;&#x8FDB;&#x884C;&#x538B;&#x7F29;&#x3002;Producer &#x7AEF;&#x8FDB;&#x884C;&#x538B;&#x7F29;&#x4E4B;&#x540E;&#xFF0C;&#x5728;
+Consumer &#x7AEF;&#x9700;&#x8FDB;&#x884C;&#x89E3;&#x538B;&#x3002;&#x538B;&#x7F29;&#x7684;&#x597D;&#x5904;&#x5C31;&#x662F;&#x51CF;&#x5C11;&#x4F20;&#x8F93;&#x7684;&#x6570;&#x636E;&#x91CF;&#xFF0C;&#x51CF;&#x8F7B;&#x5BF9;&#x7F51;&#x7EDC;&#x4F20;&#x8F93;&#x7684;&#x538B;&#x529B;&#xFF0C;&#x5728;&#x5BF9;&#x5927;
+&#x6570;&#x636E;&#x5904;&#x7406;&#x4E0A;&#xFF0C;&#x74F6;&#x9888;&#x5F80;&#x5F80;&#x4F53;&#x73B0;&#x5728;&#x7F51;&#x7EDC;&#x4E0A;&#x800C;&#x4E0D;&#x662F; CPU&#xFF08;&#x538B;&#x7F29;&#x548C;&#x89E3;&#x538B;&#x4F1A;&#x8017;&#x6389;&#x90E8;&#x5206; CPU &#x8D44;&#x6E90;&#xFF09;&#x3002;</p>
+<h1 id="4-&#x6D88;&#x8D39;&#x8005;"><a name="4-&#x6D88;&#x8D39;&#x8005;" class="anchor-navigation-ex-anchor" href="#4-&#x6D88;&#x8D39;&#x8005;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="4-&#x6D88;&#x8D39;&#x8005;" class="plugin-anchor" href="#4-&#x6D88;&#x8D39;&#x8005;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x6D88;&#x8D39;&#x8005;</h1>
+<h2 id="41-consumer-group"><a name="41-consumer-group" class="anchor-navigation-ex-anchor" href="#41-consumer-group"><i class="fa fa-link" aria-hidden="true"></i></a><a name="41-consumer-group" class="plugin-anchor" href="#41-consumer-group"><i class="fa fa-link" aria-hidden="true"></i></a>4.1 Consumer Group</h2>
+<p>&#x540C;&#x4E00; Consumer Group &#x4E2D;&#x7684;&#x591A;&#x4E2A; Consumer &#x5B9E;&#x4F8B;&#xFF0C;&#x4E0D;&#x540C;&#x65F6;&#x6D88;&#x8D39;&#x540C;&#x4E00;&#x4E2A; partition&#xFF0C;&#x7B49;&#x6548;&#x4E8E;&#x961F;&#x5217;&#x6A21;
+&#x5F0F;&#x3002;partition &#x5185;&#x6D88;&#x606F;&#x662F;&#x6709;&#x5E8F;&#x7684;&#xFF0C;Consumer &#x901A;&#x8FC7; pull &#x65B9;&#x5F0F;&#x6D88;&#x8D39;&#x6D88;&#x606F;&#x3002;Kafka &#x4E0D;&#x5220;&#x9664;&#x5DF2;&#x6D88;&#x8D39;&#x7684;&#x6D88;&#x606F;
+&#x5BF9;&#x4E8E; partition&#xFF0C;&#x987A;&#x5E8F;&#x8BFB;&#x5199;&#x78C1;&#x76D8;&#x6570;&#x636E;&#xFF0C;&#x4EE5;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6; O(1)&#x65B9;&#x5F0F;&#x63D0;&#x4F9B;&#x6D88;&#x606F;&#x6301;&#x4E45;&#x5316;&#x80FD;&#x529B;&#x3002;</p>
+<p><img src="kafka/images/image-20191102191448759.png" alt="image-20191102191448759" style="zoom:50%;"></p>
+<p>&#x4F7F;&#x7528;Consumer high level API&#x65F6;&#xFF0C;&#x540C;&#x4E00;Topic&#x7684;&#x4E00;&#x6761;&#x6D88;&#x606F;&#x53EA;&#x80FD;&#x88AB;&#x540C;&#x4E00;&#x4E2A;Consumer Group&#x5185;&#x7684;&#x4E00;&#x4E2A;Consumer&#x6D88;&#x8D39;&#xFF0C;&#x4F46;&#x591A;&#x4E2A;Consumer Group&#x53EF;&#x540C;&#x65F6;&#x6D88;&#x8D39;&#x8FD9;&#x4E00;&#x6D88;&#x606F;&#x3002;</p>
+<p>&#x8FD9;&#x662F;Kafka&#x7528;&#x6765;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;Topic&#x6D88;&#x606F;&#x7684;&#x5E7F;&#x64AD;&#xFF08;&#x53D1;&#x7ED9;&#x6240;&#x6709;&#x7684;Consumer&#xFF09;&#x548C;&#x5355;&#x64AD;&#xFF08;&#x53D1;&#x7ED9;&#x67D0;&#x4E00;&#x4E2A;Consumer&#xFF09;&#x7684;&#x624B;&#x6BB5;&#x3002;&#x4E00;&#x4E2A;Topic&#x53EF;&#x4EE5;&#x5BF9;&#x5E94;&#x591A;&#x4E2A;Consumer Group&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x5E7F;&#x64AD;&#xFF0C;&#x53EA;&#x8981;&#x6BCF;&#x4E2A;Consumer&#x6709;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;Group&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;&#x8981;&#x5B9E;&#x73B0;&#x5355;&#x64AD;&#x53EA;&#x8981;&#x6240;&#x6709;&#x7684;Consumer&#x5728;&#x540C;&#x4E00;&#x4E2A;Group&#x91CC;&#x3002;&#x7528;Consumer Group&#x8FD8;&#x53EF;&#x4EE5;&#x5C06;Consumer&#x8FDB;&#x884C;&#x81EA;&#x7531;&#x7684;&#x5206;&#x7EC4;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x591A;&#x6B21;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x5230;&#x4E0D;&#x540C;&#x7684;Topic&#x3002;</p>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;Kafka&#x7684;&#x8BBE;&#x8BA1;&#x7406;&#x5FF5;&#x4E4B;&#x4E00;&#x5C31;&#x662F;&#x540C;&#x65F6;&#x63D0;&#x4F9B;&#x79BB;&#x7EBF;&#x5904;&#x7406;&#x548C;&#x5B9E;&#x65F6;&#x5904;&#x7406;&#x3002;&#x6839;&#x636E;&#x8FD9;&#x4E00;&#x7279;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Storm&#x8FD9;&#x79CD;&#x5B9E;&#x65F6;&#x6D41;&#x5904;&#x7406;&#x7CFB;&#x7EDF;&#x5BF9;&#x6D88;&#x606F;&#x8FDB;&#x884C;&#x5B9E;&#x65F6;&#x5728;&#x7EBF;&#x5904;&#x7406;&#xFF0C;&#x540C;&#x65F6;&#x4F7F;&#x7528;Hadoop&#x8FD9;&#x79CD;&#x6279;&#x5904;&#x7406;&#x7CFB;&#x7EDF;&#x8FDB;&#x884C;&#x79BB;&#x7EBF;&#x5904;&#x7406;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x5C06;&#x6570;&#x636E;&#x5B9E;&#x65F6;&#x5907;&#x4EFD;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x4E2D;&#x5FC3;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x4FDD;&#x8BC1;&#x8FD9;&#x4E09;&#x4E2A;&#x64CD;&#x4F5C;&#x6240;&#x4F7F;&#x7528;&#x7684;Consumer&#x5C5E;&#x4E8E;&#x4E0D;&#x540C;&#x7684;Consumer Group&#x5373;&#x53EF;&#x3002;</p>
+<h2 id="42-push-vs-pull"><a name="42-push-vs-pull" class="anchor-navigation-ex-anchor" href="#42-push-vs-pull"><i class="fa fa-link" aria-hidden="true"></i></a><a name="42-push-vs-pull" class="plugin-anchor" href="#42-push-vs-pull"><i class="fa fa-link" aria-hidden="true"></i></a>4.2 Push vs. Pull</h2>
+<p>&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x7CFB;&#x7EDF;&#xFF0C;Kafka&#x9075;&#x5FAA;&#x4E86;&#x4F20;&#x7EDF;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x9009;&#x62E9;&#x7531;Producer&#x5411;broker push&#x6D88;&#x606F;&#x5E76;&#x7531;Consumer&#x4ECE;broker pull&#x6D88;&#x606F;&#x3002;&#x4E00;&#x4E9B;logging-centric system&#xFF0C;&#x6BD4;&#x5982;Facebook&#x7684;Scribe&#x548C;Cloudera&#x7684;Flume&#xFF0C;&#x91C7;&#x7528;push&#x6A21;&#x5F0F;&#x3002;&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;push&#x6A21;&#x5F0F;&#x548C;pull&#x6A21;&#x5F0F;&#x5404;&#x6709;&#x4F18;&#x52A3;&#x3002;</p>
+<p>push&#x6A21;&#x5F0F;&#x5F88;&#x96BE;&#x9002;&#x5E94;&#x6D88;&#x8D39;&#x901F;&#x7387;&#x4E0D;&#x540C;&#x7684;&#x6D88;&#x8D39;&#x8005;&#xFF0C;&#x56E0;&#x4E3A;&#x6D88;&#x606F;&#x53D1;&#x9001;&#x901F;&#x7387;&#x662F;&#x7531;broker&#x51B3;&#x5B9A;&#x7684;&#x3002;push&#x6A21;&#x5F0F;&#x7684;&#x76EE;&#x6807;&#x662F;&#x5C3D;&#x53EF;&#x80FD;&#x4EE5;&#x6700;&#x5FEB;&#x901F;&#x5EA6;&#x4F20;&#x9012;&#x6D88;&#x606F;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x6837;&#x5F88;&#x5BB9;&#x6613;&#x9020;&#x6210;Consumer&#x6765;&#x4E0D;&#x53CA;&#x5904;&#x7406;&#x6D88;&#x606F;&#xFF0C;&#x5178;&#x578B;&#x7684;&#x8868;&#x73B0;&#x5C31;&#x662F;&#x62D2;&#x7EDD;&#x670D;&#x52A1;&#x4EE5;&#x53CA;&#x7F51;&#x7EDC;&#x62E5;&#x585E;&#x3002;&#x800C;pull&#x6A21;&#x5F0F;&#x5219;&#x53EF;&#x4EE5;&#x6839;&#x636E;Consumer&#x7684;&#x6D88;&#x8D39;&#x80FD;&#x529B;&#x4EE5;&#x9002;&#x5F53;&#x7684;&#x901F;&#x7387;&#x6D88;&#x8D39;&#x6D88;&#x606F;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;Kafka&#x800C;&#x8A00;&#xFF0C;pull&#x6A21;&#x5F0F;&#x66F4;&#x5408;&#x9002;&#x3002;pull&#x6A21;&#x5F0F;&#x53EF;&#x7B80;&#x5316;broker&#x7684;&#x8BBE;&#x8BA1;&#xFF0C;Consumer&#x53EF;&#x81EA;&#x4E3B;&#x63A7;&#x5236;&#x6D88;&#x8D39;&#x6D88;&#x606F;&#x7684;&#x901F;&#x7387;&#xFF0C;&#x540C;&#x65F6;Consumer&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x63A7;&#x5236;&#x6D88;&#x8D39;&#x65B9;&#x5F0F;&#x2014;&#x2014;&#x5373;&#x53EF;&#x6279;&#x91CF;&#x6D88;&#x8D39;&#x4E5F;&#x53EF;&#x9010;&#x6761;&#x6D88;&#x8D39;&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x80FD;&#x9009;&#x62E9;&#x4E0D;&#x540C;&#x7684;&#x63D0;&#x4EA4;&#x65B9;&#x5F0F;&#x4ECE;&#x800C;&#x5B9E;&#x73B0;&#x4E0D;&#x540C;&#x7684;&#x4F20;&#x8F93;&#x8BED;&#x4E49;&#x3002;</p>
+<p>&#x5173;&#x4E8E;kafka&#x66F4;&#x591A;&#x6587;&#x7AE0;:</p>
+<p><a href="https://www.cnblogs.com/frankdeng/p/9310684.html" target="_blank">https://www.cnblogs.com/frankdeng/p/9310684.html</a></p>
+<p><a href="https://kafka.apache.org/documentation/" target="_blank">https://kafka.apache.org/documentation/</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="rabbit.html" class="navigation navigation-next navigation-unique" aria-label="Next page: RabbitMQ">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Kafka","level":"2.3.8","depth":2,"next":{"title":"RabbitMQ","level":"2.3.9","depth":2,"path":"core/msg-queue/rabbit.md","ref":"core/msg-queue/rabbit.md","articles":[]},"previous":{"title":"自己如何实现消息队列?","level":"2.3.7","depth":2,"ref":"","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","favicon"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/weylanshi"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"./source/images/donate.jpg","alipayText":" ","button":"赞赏","title":"","wechat":"","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"github-buttons":{"buttons":[{"user":"weylan","repo":"java-interview","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Blankj","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"weylan java 面试总结","language":"zh-hans","links":{"sidebar":{"个人主页":"https://www.weypage.com"}},"gitbook":"3.2.3","description":"select * from learn"},"file":{"path":"core/msg-queue/kafka.md","mtime":"2019-11-02T12:50:49.375Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-03T05:00:51.288Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

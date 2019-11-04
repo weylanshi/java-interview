@@ -6,6 +6,8 @@
 * [线程](basic/thread.md)
 * [锁机制](basic/lock.md)
 * [JVM](basic/jvm.md)
+* [数据结构和算法](basic/data-struct.md)
+    * [树](basic/data-struct/tree.md)
 
 
 ### 核心篇
@@ -15,7 +17,7 @@
 * [消息队列](core/msg-queue.md)
     * [消息队列使用场景](core/msg-queue/scene-introduction.md)
     * [如何选择消息队列?]()
-    * [如何确保消息不回丢失?]()
+    * [如何确保消息不会丢失?]()
     * [如何处理消费过程中的重复消费?]()
     * [消息积压了如何处理?](core/msg-queue/pile-up.md)
     * [如何保证消息的有序性?]()

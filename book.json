@@ -1,7 +1,7 @@
 {
-    "title": "weylan java 面试总结",
-    "author": "Blankj",
-    "description": "select * from learn",
+    "title": "Java面试知识整理",
+    "author": "weyalan",
+    "description": "Java面试知识整理",
     "language": "zh-hans",
     "gitbook": "3.2.3",
     "styles": {
@@ -17,16 +17,27 @@
     },
     "plugins": [
         "-sharing",
+        "sharing-plus",
         "splitter",
         "expandable-chapters-small",
         "anchors",
-
         "github",
         "github-buttons",
         "donate",
-        "sharing-plus",
         "anchor-navigation-ex",
-        "favicon"
+        "favicon",
+        "sectionx",
+        "toggle-chapters",
+        "search",
+        "katex",
+        "code",
+        "-lunr", 
+        "-search", 
+        "search-pro",
+        "pageview-count",
+        "popup",
+        "edit-link"
+        
     ],
     "pluginsConfig": {
         "github": {
@@ -43,10 +54,12 @@
             ]
         },
         "donate": {
-            "alipay": "./source/images/donate.jpg",
+            "alipay": "https://github.com/weylanshi/java-interview/blob/master/source/images/donate-alipay.jpeg?raw=true",
+            "wechat":"https://github.com/weylanshi/java-interview/blob/master/source/images/donate-wechat.jpeg?raw=true",
             "title": "",
             "button": "赞赏",
-            "alipayText": " "
+            "alipayText": "支付宝捐赠",
+            "wechatText": "微信捐赠"
         },
         "sharing": {
             "douban": false,
@@ -59,7 +72,7 @@
             "messenger": false,
             "pocket": false,
             "qq": true,
-            "qzone": true,
+            "qzone": false,
             "stumbleupon": false,
             "twitter": false,
             "viber": false,
@@ -68,7 +81,7 @@
             "whatsapp": false,
             "all": [
                 "google", "facebook", "weibo", "twitter",
-                "qq", "qzone", "linkedin", "pocket"
+                "qq", "qzone", "linkedin", "pocket","douban"
             ]
         },
         "anchor-navigation-ex": {
@@ -82,6 +95,10 @@
                 "120x120": "./source/images/apple-touch-icon.jpg",
                 "180x180": "./source/images/apple-touch-icon.jpg"
             }
+        },
+        "edit-link": {
+            "base": "https://github.com/weylanshi/java-interview/edit/master/",
+            "label": "编辑这篇文章"
         }
     }
 }

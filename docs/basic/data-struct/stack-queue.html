@@ -1,0 +1,1234 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>堆栈和队列 · Java面试知识整理</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="weyalan">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-sectionx/sectionx.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="tree.html" />
+    
+    
+    <link rel="prev" href="tree.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../source/images/favicon.jpg' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../source/images/apple-touch-icon.jpg'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../source/images/apple-touch-icon.jpg">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../source/images/apple-touch-icon.jpg">
+        
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"weylan","repo":"java-interview","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.weypage.com" target="_blank" class="custom-link">个人主页</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        <li class="header">基础篇</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../basic-skill.html">
+            
+                <a href="../basic-skill.html">
+            
+                    
+                    基本功
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../collection.html">
+            
+                <a href="../collection.html">
+            
+                    
+                    集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../thread.html">
+            
+                <a href="../thread.html">
+            
+                    
+                    线程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../lock.html">
+            
+                <a href="../lock.html">
+            
+                    
+                    锁机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../jvm.html">
+            
+                <a href="../jvm.html">
+            
+                    
+                    JVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../data-struct.html">
+            
+                <a href="../data-struct.html">
+            
+                    
+                    数据结构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="tree.html">
+            
+                <a href="tree.html">
+            
+                    
+                    数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="tree.html">
+            
+                <a href="tree.html">
+            
+                    
+                    链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7.3" data-path="stack-queue.html">
+            
+                <a href="stack-queue.html">
+            
+                    
+                    堆栈和队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="tree.html">
+            
+                <a href="tree.html">
+            
+                    
+                    队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="tree.html">
+            
+                <a href="tree.html">
+            
+                    
+                    散列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="tree.html">
+            
+                <a href="tree.html">
+            
+                    
+                    二叉树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="tree.html">
+            
+                <a href="tree.html">
+            
+                    
+                    堆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="tree.html">
+            
+                <a href="tree.html">
+            
+                    
+                    跳表]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="tree.html">
+            
+                <a href="tree.html">
+            
+                    
+                    图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="tree.html">
+            
+                <a href="tree.html">
+            
+                    
+                    Trie树
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../data-struct.html">
+            
+                <a href="../data-struct.html">
+            
+                    
+                    算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="tree.html">
+            
+                <a href="tree.html">
+            
+                    
+                    递归
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="tree.html">
+            
+                <a href="tree.html">
+            
+                    
+                    排序
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="tree.html">
+            
+                <a href="tree.html">
+            
+                    
+                    二分查找
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="tree.html">
+            
+                <a href="tree.html">
+            
+                    
+                    搜索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="tree.html">
+            
+                <a href="tree.html">
+            
+                    
+                    哈希算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="tree.html">
+            
+                <a href="tree.html">
+            
+                    
+                    贪心算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="tree.html">
+            
+                <a href="tree.html">
+            
+                    
+                    分治算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="tree.html">
+            
+                <a href="tree.html">
+            
+                    
+                    回溯算法]
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="tree.html">
+            
+                <a href="tree.html">
+            
+                    
+                    动态规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.10" data-path="tree.html">
+            
+                <a href="tree.html">
+            
+                    
+                    字符串匹配算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">核心篇</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../core/data-base.html">
+            
+                <a href="../../core/data-base.html">
+            
+                    
+                    数据存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../core/cache.html">
+            
+                <a href="../../core/cache.html">
+            
+                    
+                    缓存使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../core/msg-queue.html">
+            
+                <a href="../../core/msg-queue.html">
+            
+                    
+                    消息队列
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../../core/msg-queue/scene-introduction.html">
+            
+                <a href="../../core/msg-queue/scene-introduction.html">
+            
+                    
+                    消息队列使用场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" >
+            
+                <span>
+            
+                    
+                    如何选择消息队列?
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" >
+            
+                <span>
+            
+                    
+                    如何确保消息不会丢失?
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" >
+            
+                <span>
+            
+                    
+                    如何处理消费过程中的重复消费?
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="../../core/msg-queue/pile-up.html">
+            
+                <a href="../../core/msg-queue/pile-up.html">
+            
+                    
+                    消息积压了如何处理?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" >
+            
+                <span>
+            
+                    
+                    如何保证消息的有序性?
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" >
+            
+                <span>
+            
+                    
+                    自己如何实现消息队列?
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="../../core/msg-queue/kafka.html">
+            
+                <a href="../../core/msg-queue/kafka.html">
+            
+                    
+                    Kafka
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="../../core/msg-queue/rabbit.html">
+            
+                <a href="../../core/msg-queue/rabbit.html">
+            
+                    
+                    RabbitMQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">框架篇</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../framework/spring.html">
+            
+                <a href="../../framework/spring.html">
+            
+                    
+                    Spring
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../framework/mybatis.html">
+            
+                <a href="../../framework/mybatis.html">
+            
+                    
+                    Mybatis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../framework/netty.html">
+            
+                <a href="../../framework/netty.html">
+            
+                    
+                    Netty
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">微服务篇</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../micro/feedback_please.md">
+            
+                <span>
+            
+                    
+                    微服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../micro/better_tools.md">
+            
+                <span>
+            
+                    
+                    分布式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">安全&性能</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../../safe/feedback_please.md">
+            
+                <span>
+            
+                    
+                    安全问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../../safe/better_tools.md">
+            
+                <span>
+            
+                    
+                    性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">工程篇</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../../engineering/feedback_please.md">
+            
+                <span>
+            
+                    
+                    需求分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../../engineering/better_tools.md">
+            
+                <span>
+            
+                    
+                    设计能力
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../../engineering/better_tools.md">
+            
+                <span>
+            
+                    
+                    设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../../engineering/better_tools.md">
+            
+                <span>
+            
+                    
+                    业务工程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../../soft-power/feedback_please.md">
+            
+                <span>
+            
+                    
+                    软实力
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >堆栈和队列</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x5806;&#x6808;&#x548C;&#x961F;&#x5217;"><b></b>&#x5806;&#x6808;&#x548C;&#x961F;&#x5217;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6982;&#x5FF5;"><b></b>&#x6982;&#x5FF5;</a></li><li><span class="title-icon "></span><a href="#&#x5B9E;&#x6218;&#x9898;"><b></b>&#x5B9E;&#x6218;&#x9898;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6570;&#x636E;&#x6D41;&#x4E2D;&#x7684;&#x7B2C;k&#x5927;&#x5143;&#x7D20;-leetcode-703"><b></b> &#x6570;&#x636E;&#x6D41;&#x4E2D;&#x7684;&#x7B2C;K&#x5927;&#x5143;&#x7D20; (leetcode-703)</a></li><li><span class="title-icon "></span><a href="#&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x6700;&#x5927;&#x503C;leetcode-239"><b></b>&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x6700;&#x5927;&#x503C;(leetcode-239)</a></li></ul></ul></ul></div><a href="#&#x5806;&#x6808;&#x548C;&#x961F;&#x5217;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5806;&#x6808;&#x548C;&#x961F;&#x5217;"><a name="&#x5806;&#x6808;&#x548C;&#x961F;&#x5217;" class="anchor-navigation-ex-anchor" href="#&#x5806;&#x6808;&#x548C;&#x961F;&#x5217;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5806;&#x6808;&#x548C;&#x961F;&#x5217;" class="plugin-anchor" href="#&#x5806;&#x6808;&#x548C;&#x961F;&#x5217;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5806;&#x6808;&#x548C;&#x961F;&#x5217;</h1>
+<h2 id="&#x6982;&#x5FF5;"><a name="&#x6982;&#x5FF5;" class="anchor-navigation-ex-anchor" href="#&#x6982;&#x5FF5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x6982;&#x5FF5;" class="plugin-anchor" href="#&#x6982;&#x5FF5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6982;&#x5FF5;</h2>
+<ol>
+<li>Stack - First In Last Out (FILO) <ul>
+<li>Array or Linked List </li>
+</ul>
+</li>
+<li>Queue - First In First Out (FIFO)<ul>
+<li>Array or Doubly Linked List</li>
+</ul>
+</li>
+</ol>
+<p><img src="stack-queue/images/image-20191106091414313.png" alt="image-20191106091414313" style="zoom:50%;"></p>
+<p><img src="stack-queue/images/image-20191106091438278.png" alt="image-20191106091438278" style="zoom:50%;"></p>
+<p><strong>&#x5E38;&#x89C1;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;</strong></p>
+<p><img src="stack-queue/images/image-20191106091525253.png" alt="image-20191106091525253" style="zoom:50%;"></p>
+<h2 id="&#x5B9E;&#x6218;&#x9898;"><a name="&#x5B9E;&#x6218;&#x9898;" class="anchor-navigation-ex-anchor" href="#&#x5B9E;&#x6218;&#x9898;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5B9E;&#x6218;&#x9898;" class="plugin-anchor" href="#&#x5B9E;&#x6218;&#x9898;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B9E;&#x6218;&#x9898;</h2>
+<h4 id="&#x6709;&#x6548;&#x7684;&#x62EC;&#x53F7;leetcode-20"><a name="&#x6709;&#x6548;&#x7684;&#x62EC;&#x53F7;leetcode-20" class="anchor-navigation-ex-anchor" href="#&#x6709;&#x6548;&#x7684;&#x62EC;&#x53F7;leetcode-20"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x6709;&#x6548;&#x7684;&#x62EC;&#x53F7;leetcode-20" class="plugin-anchor" href="#&#x6709;&#x6548;&#x7684;&#x62EC;&#x53F7;leetcode-20"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://leetcode-cn.com/problems/valid-parentheses/" target="_blank"> &#x6709;&#x6548;&#x7684;&#x62EC;&#x53F7;</a>(leetcode-20)</h4>
+<p><strong>&#x793A;&#x4F8B;:</strong> <br>
+&#x8F93;&#x5165;: &quot;()[]{}&quot;   &#x8F93;&#x51FA;: true <br>
+&#x8F93;&#x5165;: &quot;([)]&quot;      &#x8F93;&#x51FA;: false</p>
+<pre><code class="lang-java">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isValid</span><span class="hljs-params">(String s)</span> </span>{
+    Stack&lt;Character&gt; stack = <span class="hljs-keyword">new</span> Stack&lt;&gt;();
+    HashMap&lt;Character, Character&gt; parenMap = <span class="hljs-keyword">new</span> HashMap&lt;Character, Character&gt;() {{
+      put(<span class="hljs-string">&apos;)&apos;</span>, <span class="hljs-string">&apos;(&apos;</span>);
+      put(<span class="hljs-string">&apos;]&apos;</span>, <span class="hljs-string">&apos;[&apos;</span>);
+      put(<span class="hljs-string">&apos;}&apos;</span>, <span class="hljs-string">&apos;{&apos;</span>);
+    }};
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">char</span> c : s.toCharArray()) {
+      <span class="hljs-keyword">if</span> (!parenMap.containsKey(c)) {
+        stack.push(c);
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (stack.isEmpty() || !parenMap.get(c).equals(stack.pop())) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+      }
+    }
+    <span class="hljs-keyword">return</span> stack.isEmpty();
+  }
+</code></pre>
+<h4 id="&#x7528;&#x6808;&#x5B9E;&#x73B0;&#x961F;&#x5217;leetcode-232"><a name="&#x7528;&#x6808;&#x5B9E;&#x73B0;&#x961F;&#x5217;leetcode-232" class="anchor-navigation-ex-anchor" href="#&#x7528;&#x6808;&#x5B9E;&#x73B0;&#x961F;&#x5217;leetcode-232"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7528;&#x6808;&#x5B9E;&#x73B0;&#x961F;&#x5217;leetcode-232" class="plugin-anchor" href="#&#x7528;&#x6808;&#x5B9E;&#x73B0;&#x961F;&#x5217;leetcode-232"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://leetcode-cn.com/problems/implement-queue-using-stacks/" target="_blank">&#x7528;&#x6808;&#x5B9E;&#x73B0;&#x961F;&#x5217;</a>(leetcode-232)</h4>
+<p>push(x) -- &#x5C06;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x653E;&#x5165;&#x961F;&#x5217;&#x7684;&#x5C3E;&#x90E8;&#x3002;
+pop() -- &#x4ECE;&#x961F;&#x5217;&#x9996;&#x90E8;&#x79FB;&#x9664;&#x5143;&#x7D20;&#x3002;
+peek() -- &#x8FD4;&#x56DE;&#x961F;&#x5217;&#x9996;&#x90E8;&#x7684;&#x5143;&#x7D20;&#x3002;
+empty() -- &#x8FD4;&#x56DE;&#x961F;&#x5217;&#x662F;&#x5426;&#x4E3A;&#x7A7A;&#x3002;</p>
+<p><strong>&#x793A;&#x4F8B;:</strong></p>
+<pre><code class="lang-java">MyQueue queue = <span class="hljs-keyword">new</span> MyQueue();
+
+queue.push(<span class="hljs-number">1</span>);
+queue.push(<span class="hljs-number">2</span>);  
+queue.peek();  <span class="hljs-comment">// &#x8FD4;&#x56DE; 1</span>
+queue.pop();   <span class="hljs-comment">// &#x8FD4;&#x56DE; 1</span>
+queue.empty(); <span class="hljs-comment">// &#x8FD4;&#x56DE; false</span>
+</code></pre>
+<p>&#x8BF4;&#x660E;:</p>
+<p>&#x4F60;&#x53EA;&#x80FD;&#x4F7F;&#x7528;&#x6807;&#x51C6;&#x7684;&#x6808;&#x64CD;&#x4F5C; -- &#x4E5F;&#x5C31;&#x662F;&#x53EA;&#x6709; push to top, peek/pop from top, size, &#x548C; is empty &#x64CD;&#x4F5C;&#x662F;&#x5408;&#x6CD5;&#x7684;&#x3002;
+&#x4F60;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x8BED;&#x8A00;&#x4E5F;&#x8BB8;&#x4E0D;&#x652F;&#x6301;&#x6808;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; list &#x6216;&#x8005; deque&#xFF08;&#x53CC;&#x7AEF;&#x961F;&#x5217;&#xFF09;&#x6765;&#x6A21;&#x62DF;&#x4E00;&#x4E2A;&#x6808;&#xFF0C;&#x53EA;&#x8981;&#x662F;&#x6807;&#x51C6;&#x7684;&#x6808;&#x64CD;&#x4F5C;&#x5373;&#x53EF;&#x3002;
+&#x5047;&#x8BBE;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x90FD;&#x662F;&#x6709;&#x6548;&#x7684; &#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x4E00;&#x4E2A;&#x7A7A;&#x7684;&#x961F;&#x5217;&#x4E0D;&#x4F1A;&#x8C03;&#x7528; pop &#x6216;&#x8005; peek &#x64CD;&#x4F5C;&#xFF09;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyQueue</span> </span>{
+
+    Stack&lt;Integer&gt; inStack;
+
+    Stack&lt;Integer&gt; outStack;
+
+    <span class="hljs-comment">/**
+     * Initialize your data structure here.
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MyQueue</span><span class="hljs-params">()</span> </span>{
+      inStack = <span class="hljs-keyword">new</span> Stack&lt;&gt;();
+      outStack = <span class="hljs-keyword">new</span> Stack&lt;&gt;();
+    }
+
+    <span class="hljs-comment">/**
+     * Push element x to the back of queue.
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">push</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>{
+      inStack.push(x);
+    }
+
+    <span class="hljs-comment">/**
+     * Removes the element from in front of queue and returns that element.
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">pop</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">if</span> (outStack.isEmpty()) {
+        <span class="hljs-keyword">while</span> (!inStack.isEmpty()) {
+          outStack.push(inStack.pop());
+        }
+      }
+      <span class="hljs-keyword">return</span> outStack.pop();
+    }
+
+    <span class="hljs-comment">/**
+     * Get the front element.
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">peek</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">if</span> (outStack.isEmpty()) {
+        <span class="hljs-keyword">while</span> (!inStack.isEmpty()) {
+          outStack.push(inStack.pop());
+        }
+      }
+      <span class="hljs-keyword">return</span> outStack.peek();
+    }
+
+    <span class="hljs-comment">/**
+     * Returns whether the queue is empty.
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">empty</span><span class="hljs-params">()</span> </span>{
+      <span class="hljs-keyword">return</span> outStack.isEmpty() &amp;&amp; inStack.isEmpty();
+    }
+  }
+</code></pre>
+<h3 id="&#x6570;&#x636E;&#x6D41;&#x4E2D;&#x7684;&#x7B2C;k&#x5927;&#x5143;&#x7D20;-leetcode-703"><a name="&#x6570;&#x636E;&#x6D41;&#x4E2D;&#x7684;&#x7B2C;k&#x5927;&#x5143;&#x7D20;-leetcode-703" class="anchor-navigation-ex-anchor" href="#&#x6570;&#x636E;&#x6D41;&#x4E2D;&#x7684;&#x7B2C;k&#x5927;&#x5143;&#x7D20;-leetcode-703"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x6570;&#x636E;&#x6D41;&#x4E2D;&#x7684;&#x7B2C;k&#x5927;&#x5143;&#x7D20;-leetcode-703" class="plugin-anchor" href="#&#x6570;&#x636E;&#x6D41;&#x4E2D;&#x7684;&#x7B2C;k&#x5927;&#x5143;&#x7D20;-leetcode-703"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/" target="_blank"> &#x6570;&#x636E;&#x6D41;&#x4E2D;&#x7684;&#x7B2C;K&#x5927;&#x5143;&#x7D20;</a> (leetcode-703)</h3>
+<p>&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x627E;&#x5230;&#x6570;&#x636E;&#x6D41;&#x4E2D;&#x7B2C;K&#x5927;&#x5143;&#x7D20;&#x7684;&#x7C7B;&#xFF08;class&#xFF09;&#x3002;&#x6CE8;&#x610F;&#x662F;&#x6392;&#x5E8F;&#x540E;&#x7684;&#x7B2C;K&#x5927;&#x5143;&#x7D20;&#xFF0C;&#x4E0D;&#x662F;&#x7B2C;K&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x5143;&#x7D20;&#x3002;</p>
+<p>&#x4F60;&#x7684; KthLargest &#x7C7B;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x540C;&#x65F6;&#x63A5;&#x6536;&#x6574;&#x6570; k &#x548C;&#x6574;&#x6570;&#x6570;&#x7EC4;nums &#x7684;&#x6784;&#x9020;&#x5668;&#xFF0C;&#x5B83;&#x5305;&#x542B;&#x6570;&#x636E;&#x6D41;&#x4E2D;&#x7684;&#x521D;&#x59CB;&#x5143;&#x7D20;&#x3002;&#x6BCF;&#x6B21;&#x8C03;&#x7528; KthLargest.add&#xFF0C;&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x6570;&#x636E;&#x6D41;&#x4E2D;&#x7B2C;K&#x5927;&#x7684;&#x5143;&#x7D20;&#x3002;</p>
+<p>&#x793A;&#x4F8B;:</p>
+<pre><code class="lang-java"><span class="hljs-keyword">int</span> k = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">int</span>[] arr = [<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">8</span>,<span class="hljs-number">2</span>];
+KthLargest kthLargest = <span class="hljs-keyword">new</span> KthLargest(<span class="hljs-number">3</span>, arr);
+kthLargest.add(<span class="hljs-number">3</span>);   <span class="hljs-comment">// returns 4</span>
+kthLargest.add(<span class="hljs-number">5</span>);   <span class="hljs-comment">// returns 5</span>
+kthLargest.add(<span class="hljs-number">10</span>);  <span class="hljs-comment">// returns 5</span>
+kthLargest.add(<span class="hljs-number">9</span>);   <span class="hljs-comment">// returns 8</span>
+kthLargest.add(<span class="hljs-number">4</span>);   <span class="hljs-comment">// returns 8&#x8BF4;&#x660E;:</span>
+&#x4F60;&#x53EF;&#x4EE5;&#x5047;&#x8BBE; nums &#x7684;&#x957F;&#x5EA6;&#x2265; k-<span class="hljs-number">1</span> &#x4E14;k &#x2265; <span class="hljs-number">1</span>&#x3002;
+</code></pre>
+<p>&#x89E3;&#x7B54;:</p>
+<pre><code class="lang-java"> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">KthLargest</span> </span>{
+
+    <span class="hljs-keyword">final</span> PriorityQueue&lt;Integer&gt; q;
+    <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> k;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">KthLargest</span><span class="hljs-params">(<span class="hljs-keyword">int</span> k, <span class="hljs-keyword">int</span>[] nums)</span> </span>{
+      <span class="hljs-keyword">this</span>.k = k;
+      q = <span class="hljs-keyword">new</span> PriorityQueue&lt;&gt;(k);
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> num : nums) {
+        add(num);
+      }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> val)</span> </span>{
+      <span class="hljs-keyword">if</span> (q.size() &lt; k) {
+        q.offer(val);
+      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (q.peek() &lt; val) {
+        q.poll();
+        q.offer(val);
+      }
+      <span class="hljs-keyword">return</span> q.peek();
+    }
+  }
+</code></pre>
+<h3 id="&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x6700;&#x5927;&#x503C;leetcode-239"><a name="&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x6700;&#x5927;&#x503C;leetcode-239" class="anchor-navigation-ex-anchor" href="#&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x6700;&#x5927;&#x503C;leetcode-239"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x6700;&#x5927;&#x503C;leetcode-239" class="plugin-anchor" href="#&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x6700;&#x5927;&#x503C;leetcode-239"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://leetcode-cn.com/problems/sliding-window-maximum/" target="_blank">&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x6700;&#x5927;&#x503C;</a>(leetcode-239)</h3>
+<p>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x6570;&#x7EC4; nums&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x5927;&#x5C0F;&#x4E3A; k &#x7684;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x4ECE;&#x6570;&#x7EC4;&#x7684;&#x6700;&#x5DE6;&#x4FA7;&#x79FB;&#x52A8;&#x5230;&#x6570;&#x7EC4;&#x7684;&#x6700;&#x53F3;&#x4FA7;&#x3002;&#x4F60;&#x53EA;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5728;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x5185;&#x7684; k &#x4E2A;&#x6570;&#x5B57;&#x3002;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x6BCF;&#x6B21;&#x53EA;&#x5411;&#x53F3;&#x79FB;&#x52A8;&#x4E00;&#x4F4D;&#x3002;</p>
+<p>&#x8FD4;&#x56DE;&#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x4E2D;&#x7684;&#x6700;&#x5927;&#x503C;&#x3002;</p>
+<p>&#x793A;&#x4F8B;:</p>
+<p>&#x8F93;&#x5165;: nums = [1,3,-1,-3,5,3,6,7], &#x548C; k = 3
+&#x8F93;&#x51FA;: [3,3,5,5,6,7] 
+&#x89E3;&#x91CA;: </p>
+<pre><code>  &#x6ED1;&#x52A8;&#x7A97;&#x53E3;&#x7684;&#x4F4D;&#x7F6E;                &#x6700;&#x5927;&#x503C;
+
+---------------               -----
+
+[1  3  -1] -3  5  3  6  7       3
+ 1 [3  -1  -3] 5  3  6  7       3
+ 1  3 [-1  -3  5] 3  6  7       5
+ 1  3  -1 [-3  5  3] 6  7       5
+ 1  3  -1  -3 [5  3  6] 7       6
+ 1  3  -1  -3  5 [3  6  7]      7
+</code></pre><p>&#x63D0;&#x793A;&#xFF1A;</p>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x5047;&#x8BBE; k &#x603B;&#x662F;&#x6709;&#x6548;&#x7684;&#xFF0C;&#x5728;&#x8F93;&#x5165;&#x6570;&#x7EC4;&#x4E0D;&#x4E3A;&#x7A7A;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;1 &#x2264; k &#x2264; &#x8F93;&#x5165;&#x6570;&#x7EC4;&#x7684;&#x5927;&#x5C0F;&#x3002;</p>
+<pre><code class="lang-java">
+
+</code></pre>
+
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="tree.html" class="navigation navigation-prev " aria-label="Previous page: 链表">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="tree.html" class="navigation navigation-next " aria-label="Next page: 队列">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"堆栈和队列","level":"1.7.3","depth":2,"next":{"title":"队列","level":"1.7.4","depth":2,"path":"basic/data-struct/tree.md","ref":"basic/data-struct/tree.md","articles":[]},"previous":{"title":"链表","level":"1.7.2","depth":2,"path":"basic/data-struct/tree.md","ref":"basic/data-struct/tree.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","sharing-plus","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","anchor-navigation-ex","favicon","sectionx","toggle-chapters","search","katex","code","-lunr","-search","search-pro","pageview-count","popup","edit-link"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/weylanshi"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"donate":{"alipay":"https://github.com/weylanshi/java-interview/blob/master/source/images/donate-alipay.jpg?raw=true","alipayText":" ","button":"赞赏","title":"","wechat":"https://github.com/weylanshi/java-interview/blob/master/source/images/donate-wechat.jpg?raw=true","wechatText":" "},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"sectionx":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{"shortcut":"./source/images/favicon.jpg","bookmark":"./source/images/favicon.jpg","appleTouch":"./source/images/apple-touch-icon.jpg","appleTouchMore":{"120x120":"./source/images/apple-touch-icon.jpg","180x180":"./source/images/apple-touch-icon.jpg"}},"pageview-count":{},"github-buttons":{"buttons":[{"user":"weylan","repo":"java-interview","type":"star","size":"small","count":true}]},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket","douban"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"edit-link":{"label":"编辑这篇文章","base":"https://github.com/weylanshi/java-interview/edit/master/"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"toggle-chapters":{}},"theme":"default","author":"weyalan","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java面试知识整理","language":"zh-hans","links":{"sidebar":{"个人主页":"https://www.weypage.com"}},"gitbook":"3.2.3","description":"Java面试知识整理"},"file":{"path":"basic/data-struct/stack-queue.md","mtime":"2019-11-06T02:36:46.733Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-10T02:30:23.244Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
